@@ -1,7 +1,6 @@
 import React from "react";
 import fakeBookings from "../data/fakeBookings";
 import moment from "moment";
-console.log(fakeBookings);
 
 const SearchResults = () => {
   return (
