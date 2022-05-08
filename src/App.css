@@ -18,6 +18,17 @@
   font-weight: bold;
 }
 
+.header {
+  display: flex;
+  width: 100%;
+  background-color: black;
+}
+
+.header-logo {
+  height: 50px;
+  padding-left: 15px;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -47,11 +58,24 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
 }
 
+li {
+  list-style: none;
+}
+
 .card {
   width: 18rem;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.tourist-cards {
+  padding: 40px;
 }
