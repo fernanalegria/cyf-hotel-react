@@ -8,7 +8,7 @@ const Heading = () => {
         src="https://www.whitehotel.com/files/imgb/whitehotel-logo-small.png"
         alt="logo"
       />
-      <header className="App-header">CYF Hotel</header>
+      <header className="App-header">Hotel</header>
     </div>
   );
 };
