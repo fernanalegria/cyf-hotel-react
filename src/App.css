@@ -79,3 +79,37 @@ li {
 .tourist-cards {
   padding: 40px;
 }
+
+.highlighted {
+  background-color: yellowgreen;
+}
+
+.container {
+  padding-bottom: 70px;
+}
+
+.restaurantContainer {
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.restaurantContainer h3 {
+  padding-bottom: 30px;
+}
+
+.dishOrder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 400px 60px 60px;
+  padding: 10px;
+  border-top: 1px solid #dfdfdf;
+}
+
+.btn-primary {
+  background-color: rgb(213, 233, 255);
+  color: rgb(22, 7, 89);
+}
