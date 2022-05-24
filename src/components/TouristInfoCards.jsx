@@ -31,7 +31,7 @@ const TouristInfoCards = () => {
             target="_blank"
             className="btn btn-primary"
           >
-            Go Glasgow
+            Go Manchester
           </a>
         </div>
       </div>
@@ -47,7 +47,7 @@ const TouristInfoCards = () => {
             target="_blank"
             className="btn btn-primary"
           >
-            Go Glasgow
+            Go London
           </a>
         </div>
       </div>

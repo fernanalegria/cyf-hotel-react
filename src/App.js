@@ -1,11 +1,11 @@
 import React from "react";
 
-import Bookings from "./components/Bookings";
+import Bookings from "../src/components/Bookings";
 import "./App.css";
-import Heading from "./components/Heading";
-import TouristInfoCards from "./components/TouristInfoCards";
-import Footer from "./components/Footer";
-import Restaurant from "./components/Restaurant";
+import Heading from "../src/components/Heading";
+import TouristInfoCards from "../src/components/TouristInfoCards";
+import Footer from "../src/components/Footer";
+import Restaurant from "../src/components/Restaurant";
 
 const App = () => {
   return (
