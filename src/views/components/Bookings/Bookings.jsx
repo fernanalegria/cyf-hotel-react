@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import Search from "./Search.jsx";
-import SearchResults from "./SearchResults.jsx";
+import Search from "./Search";
+import SearchResults from "./SearchResults";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -15,6 +15,7 @@ const Bookings = () => {
         throw new Error("Something went wrong");
       })
       .then(data => {
+        console.log(data);
         setBookings(data);
       })
       .catch(error => console.log(error));
