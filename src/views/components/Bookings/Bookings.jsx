@@ -1,45 +1,37 @@
 import React, { useState, useEffect } from "react";
 
+import { connect } from "react-redux";
+
 import Search from "./Search";
 import SearchResults from "./SearchResults";
+import { bookingActions } from "state/modules/bookings";
 
-const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+const Bookings = ({ bookings, getBookings }) => {
+  const [searchFilter, setSearchFilter] = useState("");
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error("Something went wrong");
-      })
-      .then(data => {
-        console.log(data);
-        setBookings(data);
-      })
-      .catch(error => console.log(error));
+    getBookings();
   }, []);
 
-  const search = searchVal => {
-    // console.info("TO DO!", searchVal);
-    const filteredBookings = bookings.filter(booking => {
-      return (
-        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
-      );
-    });
-    setBookings(filteredBookings);
+  const updateSearchFilter = newSearchFilter => {
+    setSearchFilter(newSearchFilter);
   };
+
+  const filteredBookings = bookings.filter(
+    booking =>
+      !searchFilter ||
+      booking.firstName.toLowerCase().includes(searchFilter.toLowerCase()) ||
+      booking.surname.toLowerCase().includes(searchFilter.toLowerCase())
+  );
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        {bookings.length > 0 ? (
-          <SearchResults bookings={bookings} />
+        <Search search={updateSearchFilter} />
+        {filteredBookings.length > 0 ? (
+          <SearchResults bookings={filteredBookings} />
         ) : (
-          <h3 className="loading-data-h1">Loading..</h3>
+          <h3 className="loading-data-h1">No results</h3>
         )}
         {/* <SearchResults results={FakeBookings} /> */}
       </div>
@@ -47,4 +39,13 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+const mapStateToProps = ({ bookings }) => ({ bookings });
+
+const mapDispatchToProps = {
+  getBookings: bookingActions.getBookings
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Bookings);

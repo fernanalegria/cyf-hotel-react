@@ -9,7 +9,6 @@ const CustomerProfile = props => {
     fetch(`https://cyf-react.glitch.me/customers/${props.customerId}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setCustomer(data);
       });
   }, [props.customerId]);
