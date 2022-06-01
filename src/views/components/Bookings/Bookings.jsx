@@ -19,7 +19,6 @@ const Bookings = ({ bookings, getBookings }) => {
 
   const filteredBookings = bookings.filter(
     booking =>
-      !searchFilter ||
       booking.firstName.toLowerCase().includes(searchFilter.toLowerCase()) ||
       booking.surname.toLowerCase().includes(searchFilter.toLowerCase())
   );
